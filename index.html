@@ -144,16 +144,18 @@
 
         .kru-pattern-bg {
             background-color: var(--hero-bg); 
-            background-image: url("assets/yellow-pattern.png"); 
+            background-image: url('yellow-pattern.png'); 
             
-            /* Made the image slightly larger so it has room to move */
-            background-size: 120%; 
+            /* Stops the image from tiling and creating those blocky lines */
+            background-repeat: no-repeat; 
             
+            /* Uses 150% of the largest screen dimension to cover any device perfectly */
+            background-size: 150vmax; 
+            
+            background-position: center;
             background-attachment: fixed; 
             background-blend-mode: var(--hero-blend); 
             transition: background-color 0.4s ease, background-blend-mode 0.4s ease;
-            
-            /* NEW: Adds the smooth drifting animation */
             animation: patternDrift 30s ease-in-out infinite alternate;
         }
 
